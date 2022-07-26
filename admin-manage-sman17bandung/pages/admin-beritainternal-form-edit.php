@@ -68,8 +68,8 @@ include_once("layout.php");
                   <textarea id="summernote" name="isiBeritaInternal" rows="3"><?php echo $DataBeritaInternal["isiBeritaInternal"] ?></textarea>                          
                   </div>
                   <div class="form-group">
-                  <label>Date and time:</label>
-                  <input type="datetime-local" name="tanggal" class="form-control" value="<?php echo $DataBeritaInternal["tanggal"] ?>">
+                  <label for="tanggal">Date and time:</label>
+                  <input type="datetime-local" id="tanggal" name="tanggal" class="form-control" value="<?php echo $DataBeritaInternal["tanggal"] ?>">
                 </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Foto Berita</label>

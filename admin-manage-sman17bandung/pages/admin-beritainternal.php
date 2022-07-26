@@ -78,13 +78,8 @@ include_once("layout.php");
                 <textarea id="summernote" name="isiBeritaInternal" rows="3"></textarea>                          
                 </div>
                 <div class="form-group">
-                <label>Tanggal:</label>
-                  <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
-                      <input type="text" name="tanggal" class="form-control datetimepicker-input" data-target="#reservationdatetime" required/>
-                      <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
-                          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                      </div>
-                  </div>
+                <label for="tanggal">Tanggal:</label>
+                <input type="datetime-local" id="tanggal" name="tanggal" class="form-control">
               </div>
                 <div class="form-group">
                   <label for="exampleInputFile">Foto Berita</label>
