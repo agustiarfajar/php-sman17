@@ -28,7 +28,7 @@ if(isset($_POST["btnSimpan"])){
 		{
 			$pesansalah .= "Alamat tidak boleh kosong.<br>";
 		}
-		if(!is_numeric($v_no_telp)) {
+		if(!is_numeric((int) $v_no_telp)) {
 			$pesansalah .= "Masukan no telepon harus berupa angka.<br>";
 		}
 		if(($v_jk != "L") && ($v_jk != "P"))
@@ -43,8 +43,8 @@ if(isset($_POST["btnSimpan"])){
 				$idGuru  	=$db->escape_string($_POST["idGuru"]);
 				$namaGuru	=$db->escape_string($_POST["namaGuru"]);
 				$jk			=$db->escape_string($_POST["jk"]);
-				$noTelp	   	=$db->escape_string($_POST["noTelp"]);
-				$alamat	   	=$db->escape_string($_POST["alamat"]);
+				$noTelp	   	=$db->escape_string($_POST["noTelpGuru"]);
+				$alamat	   	=$db->escape_string($_POST["alamatGuru"]);
 				$idAdmin 	=$_SESSION["idAdmin"];
 				// Susun query insert
 				$sql="INSERT INTO guru(idGuru,namaGuru,jk,noTelpGuru,alamatGuru,idAdmin)
@@ -61,8 +61,10 @@ if(isset($_POST["btnSimpan"])){
 			}	
 		} 
 		else 
+		{
 			$_SESSION["salahinputguru"] = $pesansalah;
 			header("Location: admin-gurustaff.php?error=input");
+		}
 	}
 	else
 		echo "Gagal koneksi".(DEVELOPMENT?" : ".$db->connect_error:"")."<br>";
