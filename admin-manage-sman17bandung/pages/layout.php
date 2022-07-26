@@ -10,7 +10,9 @@ function style_section()
   <title>SMAN 17 Bandung</title>
 
   <!-- Google Font: Source Sans Pro -->
+  
   <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="../plugins/summernote/summernote-bs4.min.js"></script>
   <link rel="icon" href="../dist/img/logo-sma.png">  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -30,11 +32,13 @@ function style_section()
   <!-- Daterange picker -->
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
+  
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
   <!-- Datatables -->
   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
 </head>
 <?php
 } 
@@ -245,7 +249,7 @@ function script_section()
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+
 <!-- overlayScrollbars -->
 <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- DataTables  & Plugins -->
@@ -267,9 +271,19 @@ function script_section()
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard.js"></script>
+
 <!-- IONICONS -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+  })
+
+  //Date and time picker
+  $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
+</script>
 </body>
 </html>
 <?php

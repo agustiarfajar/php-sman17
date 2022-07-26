@@ -7,26 +7,6 @@ function dbConnect()
     return $db;
 }
 
-function getDataGuru($idGuru){
-	$db=dbConnect();
-	if($db->connect_errno==0){
-		$res=$db->query("SELECT * FROM guru WHERE idGuru = '$idGuru'");
-		if($res){
-			if($res->num_rows>0){
-				$data=$res->fetch_assoc();
-				$res->free();
-				return $data;
-			}
-			else
-				return FALSE;
-		}
-		else
-			return FALSE; 
-	}
-	else
-		return FALSE;
-}
-
 function showSuccess($message)
 {   
     // style_section();
@@ -49,6 +29,47 @@ function showError($message)
     </div>
 <?php
 }
+
+function getDataGuru($idGuru){
+	$db=dbConnect();
+	if($db->connect_errno==0){
+		$res=$db->query("SELECT * FROM guru WHERE idGuru = '$idGuru'");
+		if($res){
+			if($res->num_rows>0){
+				$data=$res->fetch_assoc();
+				$res->free();
+				return $data;
+			}
+			else
+				return FALSE;
+		}
+		else
+			return FALSE; 
+	}
+	else
+		return FALSE;
+}
+
+function getDataBeritaInternal($idBeritaInternal){
+	$db=dbConnect();
+	if($db->connect_errno==0){
+		$res=$db->query("SELECT * FROM berita_internal WHERE idBeritaInternal = '$idBeritaInternal'");
+		if($res){
+			if($res->num_rows>0){
+				$data=$res->fetch_assoc();
+				$res->free();
+				return $data;
+			}
+			else
+				return FALSE;
+		}
+		else
+			return FALSE; 
+	}
+	else
+		return FALSE;
+}
+
 
 // PENOMORAN OTOMATIS
 function kodeOtomatisGuru()
@@ -73,6 +94,36 @@ function kodeOtomatisGuru()
             } else 
             {
                 $idGuru = "G0001";
+            }
+        }
+        return $idGuru;
+    }
+    else
+        return FALSE;   
+}
+
+function kodeOtomatisBeritaInternal()
+{
+    $db = dbConnect();
+	if($db->connect_errno == 0)
+    {
+        $sql = "SELECT MAX(idBeritaInternal) as kodeTerbesar FROM berita_internal";
+        $res = $db->query($sql);
+        if($res)
+        {
+            if($res->num_rows>0)
+            {
+                $data = $res->fetch_assoc();
+                $idGuru = $data['kodeTerbesar'];
+                $urutan = (int) substr($idGuru, 2, 4);
+                $urutan++;
+
+                $huruf = "BI";
+                $idGuru = $huruf.sprintf("%04s", $urutan);
+               
+            } else 
+            {
+                $idGuru = "BI0001";
             }
         }
         return $idGuru;
