@@ -39,6 +39,15 @@ include_once("layout.php");
             else if($success == 3)
               showSuccess("Data berhasil dihapus.");
         }
+
+        if(isset($_GET["error"]))
+        {
+            $Error = $_GET["error"];
+            if($Error == "id")
+              showError("ID Guru sudah ada.");
+            else if($Error == "input")
+              showError("Kesalahan format masukan : \n".$_SESSION["salahinputguru"]);
+        }
       ?>
       <button type="button" class="btn btn-app" data-toggle="modal" data-target="#modal-lg">
         <i class="fas fa-plus"></i> Tambah
@@ -57,9 +66,8 @@ include_once("layout.php");
             <div class="modal-body">  
                 <div class="card-body">
                   <div class="form-group">
-                    <?php $dataguru = kodeOtomatisGuru() ?>
                     <label for="idGuru">ID Guru</label>
-                    <input type="text" class="form-control" id="idGuru" maxlength="8" name="idGuru" values="<?php echo $dataguru["kodeTerbesar"] ?>" placeholder="Masukan ID Guru" autocomplete="off">
+                    <input type="text" class="form-control" id="idGuru" maxlength="8" name="idGuru" value="<?php echo kodeOtomatisGuru() ?>" readonly autocomplete="off">
                   </div>
                   <div class="form-group">
                     <label for="namaGuru">Nama Guru</label>
@@ -142,8 +150,8 @@ include_once("layout.php");
                                           <td>".$row['idGuru']."</td>
                                           <td>".$row['namaGuru']."</td>
                                           <td>".$row['jk']."</td>
-                                          <td>".$row['no_telp']."</td>
-                                          <td>".$row['alamat']."</td>
+                                          <td>".$row['noTelpGuru']."</td>
+                                          <td>".$row['alamatGuru']."</td>
                                           <td>".$row['namaAdmin']."</td>
                                           <td>
                                             <a href='admin-gurustaff-form-edit.php?idGuru=".$row['idGuru']."' class='btn btn-primary btn-sm'><i class='fas fa-edit'></i></a> |

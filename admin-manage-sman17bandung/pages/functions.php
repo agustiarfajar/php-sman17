@@ -63,19 +63,19 @@ function kodeOtomatisGuru()
             if($res->num_rows>0)
             {
                 $data = $res->fetch_assoc();
-                $id_kelas = $data['kodeTerbesar'];
-                $urutan = (int) substr($id_kelas, 1, 3);
+                $idGuru = $data['kodeTerbesar'];
+                $urutan = (int) substr($idGuru, 1, 4);
                 $urutan++;
 
                 $huruf = "G";
-                $id_kelas = $huruf.sprintf("%04s", $urutan);
+                $idGuru = $huruf.sprintf("%04s", $urutan);
                
             } else 
             {
-                $id_kelas = "G0001";
+                $idGuru = "G0001";
             }
         }
-        return $id_kelas;
+        return $idGuru;
     }
     else
         return FALSE;   

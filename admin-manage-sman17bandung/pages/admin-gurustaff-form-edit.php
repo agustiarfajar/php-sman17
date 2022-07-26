@@ -76,11 +76,11 @@ include_once("layout.php");
                     </div>
                     <div class="form-group">
                       <label for="noTelp">No.Telp</label>
-                      <input type="text" class="form-control" id="noTelp" maxlength="13" name="noTelp" placeholder="Masukan No.Telp" autocomplete="off" value="<?php echo $dataguru["noTelp"] ?>">
+                      <input type="text" class="form-control" id="noTelp" maxlength="13" name="noTelp" placeholder="Masukan No.Telp" autocomplete="off" value="<?php echo $dataguru["noTelpGuru"] ?>">
                     </div>
                     <div class="form-group">
                       <label>Alamat</label>
-                      <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan Alamat"><?php echo $dataguru["alamat"] ?></textarea>
+                      <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan Alamat"><?php echo $dataguru["alamatGuru"] ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-info" name="btnUpdate" onclick="return confirm('Apakah anda yakin ingin mengubah data?')"><i class="fas fa-edit"></i> Update</button>
                 </form>

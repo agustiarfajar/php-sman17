@@ -17,8 +17,8 @@ if(isset($_POST["btnUpdate"])){
 			$sql="UPDATE guru set 
 						namaGuru='$namaGuru',
 						jk='$jk',
-						noTelp='$noTelp',
-						alamat='$alamat'
+						noTelpGuru='$noTelp',
+						alamatGuru='$alamat'
 						WHERE idGuru='$idGuru'";
 			// Eksekusi query insert
 			$res=$db->query($sql);
