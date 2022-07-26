@@ -86,11 +86,11 @@ include_once("layout.php");
                   </div>
                   <div class="form-group">
                     <label for="noTelp">No.Telp</label>
-                    <input type="text" class="form-control" id="noTelp" maxlength="13" name="noTelp" placeholder="Masukan No.Telp" autocomplete="off">
+                    <input type="text" class="form-control" id="noTelp" maxlength="13" name="noTelpGuru" placeholder="Masukan No.Telp" autocomplete="off">
                   </div>
                   <div class="form-group">
                     <label>Alamat</label>
-                    <textarea class="form-control" rows="3" name="alamat" placeholder="Masukan Alamat"></textarea>
+                    <textarea class="form-control" rows="3" name="alamatGuru" placeholder="Masukan Alamat"></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->
