@@ -39,7 +39,6 @@ if(isset($_POST["btnSimpan"])){
 			$namaBeritaInternal	=$db->escape_string($_POST["namaBeritaInternal"]);
 			$isiBeritaInternal	=$db->escape_string($_POST["isiBeritaInternal"]);
 			$tanggal	   		= date('Y-m-d H:i', strtotime($db->escape_string($_POST["tanggal"])));
-			// $fotoBerita	   		=$db->escape_string($_POST["fotoBerita"]);
 			$idAdmin 			=$_SESSION["idAdmin"];
 
 			// GAMBAR

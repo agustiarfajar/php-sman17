@@ -29,7 +29,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #2E5680;">
   <div class="container-fluid">
   	
-  	<span class="navbar-brand" href="#"><img src="../assets/logonavbar.png" width="90%"></span>
+  	<span class="navbar-brand" href="#"><img src="assets/logonavbar.png" width="90%"></span>
 
     	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<i class="fas fa-bars navbar-toggler-icon" style="color: white"></i>
@@ -68,53 +68,6 @@
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		        		<li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
 		            	<li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
-		            	<li><a class="dropdown-item" href="#">Info Kuliah</a></li>
-		        	</ul>
-	        	</li>
-
-	        	
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Kesiswaan
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Tata Tertib</a></li>
-		            	<li><a class="dropdown-item" href="#">SOP Pakaian Seragam</a></li>
-		            	<li><a class="dropdown-item" href="#">Info Osis</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Ekskul</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Nama Siswa</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Fasilitas
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Denah Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Sarpras Sekolah</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Media
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>media">Profile Video Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>media">Galeri</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>media">Streaming Youtube</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Berita
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>berita">Berita Kegiatan</a></li>
-		            	<li><a class="dropdown-item" href="#">Prestasi</a></li>
-		            	<li><a class="dropdown-item" href="#">Karya Tulis Ilmiah</a></li>
 		        	</ul>
 	        	</li>
 

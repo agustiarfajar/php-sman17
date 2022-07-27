@@ -3,6 +3,7 @@
     
     $conn = conn();
     $viewBeritaEksternal = viewBeritaEksternal();
+    $viewBeritaInternal = viewBeritaInternal();
 
     // berita
     $arrayBeritaEksternal = array();
@@ -11,13 +12,12 @@
 	}
 	//berita
 
-    //agenda
-	$selectAllAgenda = viewAgenda();
-	$arrayAgenda = array();
-	foreach ($selectAllAgenda as $saa) {
-		$arrayAgenda[] = $saa;
+    // berita
+    $arrayBeritaInternal = array();
+	foreach ($viewBeritaInternal as $sai) {
+		$arrayBeritaInternal[] = $sai;
 	}
-	//agenda
+	//berita
 
 	//kalender
 	$selectAllKalender = viewKalender();
@@ -54,110 +54,74 @@
 </style>
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg" style="background-color: #2E5680;">
-        <div class="container-fluid">
-            
-            <span class="navbar-brand" href="#"><img src="assets/logonavbar.png" width="90%"></span>
+<nav class="navbar navbar-expand-lg" style="background-color: #2E5680;">
+  <div class="container-fluid">
+  	
+  	<span class="navbar-brand" href="#"><img src="assets/logonavbar.png" width="90%"></span>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars navbar-toggler-icon" style="color: white"></i>
-                </button>
+    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<i class="fas fa-bars navbar-toggler-icon" style="color: white"></i>
+    	</button>
 
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
-
-
-                        <li class="nav-item" style="padding-right: 10px;">
-                            <a class="nav-link" style="color: white;font-size: 16px;" href="<?= BASEURL;?>">Home</a>
-                        </li>
+    	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+      	
+	      	<ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
 
 
-                        <li class="nav-item dropdown" style="padding-right: 10px;">
-                            <a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Profil Sekolah
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>profil">Sejarah</a></li>
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>profil/hymne.php">Hymne Sekolah</a></li>
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>profil">Akreditasi Sekolah</a></li>
-
-                            </ul>
-                        </li>
+	      		<li class="nav-item" style="padding-right: 10px;">
+	          		<a class="nav-link" style="color: white;font-size: 16px;" href="<?= BASEURL;?>">Home</a>
+	        	</li>
 
 
-                        <li class="nav-item dropdown" style="padding-right: 10px;">
-                            <a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Akademik
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
-                                <li><a class="dropdown-item" href="#">Daftar Nama Guru / Staff</a></li>
-                            </ul>
-                        </li>
+	        	<li class="nav-item dropdown" style="padding-right: 10px;">
+	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            		Profil Sekolah
+	          		</a>
+		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		        		<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Sejarah</a></li>
+		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
+		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil/hymne.php">Hymne Sekolah</a></li>
+		            	<li><a class="dropdown-item" href="#">Program Unggulan</a></li>
+		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Akreditasi Sekolah</a></li>
+		            	<li><a class="dropdown-item" href="#">Komite Sekolah</a></li>
 
-                        
-                        <li class="nav-item dropdown" style="padding-right: 10px;">
-                            <a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Kesiswaan
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Tata Tertib</a></li>
-                                <li><a class="dropdown-item" href="#">SOP Pakaian Seragam</a></li>
-                                <li><a class="dropdown-item" href="#">Daftar Ekskul</a></li>
-                            </ul>
-                        </li>
+		        	</ul>
+	        	</li>
 
-                        <li class="nav-item dropdown" style="padding-right: 10px;">
-                            <a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Fasilitas
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Denah Sekolah</a></li>
-                                <li><a class="dropdown-item" href="#">Daftar Sarpras Sekolah</a></li>
-                            </ul>
-                        </li>
 
-                        <li class="nav-item dropdown" style="padding-right: 10px;">
-                            <a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Media
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>media">Profile Video Sekolah</a></li>
-                            </ul>
-                        </li>
+	        	<li class="nav-item dropdown" style="padding-right: 10px;">
+	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            		Akademik
+	          		</a>
+		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		        		<li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
+		            	<li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
+		        	</ul>
+	        	</li>
 
-                        <li class="nav-item dropdown" style="padding-right: 10px;">
-                            <a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Berita
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>berita_internal">Berita Internal</a></li>
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>berita_eksternal">Berita Eksternal</a></li>
-                                <li><a class="dropdown-item" href="#">Prestasi</a></li>
-                            </ul>
-                        </li>
+	        	<li class="nav-item dropdown" style="padding-right: 10px;">
+	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            		PPDB
+	          		</a>
+		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		        		<li><a class="dropdown-item" href="#">Info PPDB</a></li>
+		            	<li><a class="dropdown-item" href="#">Website Resmi PPDB</a></li>
+		        	</ul>
+	        	</li>
 
-                        <li class="nav-item dropdown" style="padding-right: 10px;">
-                            <a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                PPDB
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Info PPDB</a></li>
-                            </ul>
-                        </li>
 
-                        <li class="nav-item" style="padding-right: 10px;">
-                            <a class="nav-link" style="color: white;font-size: 16px;" href="<?= BASEURL;?>alumni">Alumni</a>
-                        </li>
 
-                    </ul>
+	        	<li class="nav-item" style="padding-right: 10px;">
+	          		<a class="nav-link" style="color: white;font-size: 16px;" href="#">Alumni</a>
+	        	</li>
 
-                </div>
+	      	</ul>
 
-        </div>
-        </nav>
+    	</div>
+
+  </div>
+</nav>
+
     <!--Navbar-->
 
 
@@ -197,11 +161,11 @@
     <!-- Carousel -->
 
 
-    <!-- Berita -->
+    <!-- Berita Eksternal -->
     <div class="container mt-5 mb-5">
 		
         <div class="mt-5 mb-5">
-            <h2><b>Berita Terbaru</b></h2>
+            <h2><b>Berita Eksternal</b></h2>
         </div>
 
 
@@ -211,10 +175,11 @@
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="<?= BASEURL?>berita/detail.php?idberita=<?= $arrayBeritaEksternal[0]['idBeritaEksternal']?>" style="text-decoration: none;">
+                            <a href="<?= BASEURL?>berita/index.php" style="text-decoration: none;">
+                            
                                 <div class="gambar">
                                     <center>
-                                        <img src="berita/storage/<?= $arrayBeritaEksternal[0]['fotoBerita']?>" width="100%">
+                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[0]['fotoBerita']?>" width="100%">
                                     </center>
                                 </div>
                                 <div class="isi mt-2">
@@ -241,10 +206,11 @@
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="<?= BASEURL?>berita/detail.php?idberita=<?= $arrayBeritaEksternal[1]['idBeritaEksternal']?>" style="text-decoration: none;">
+                            <a href="<?= BASEURL?>berita/index.php" style="text-decoration: none;">
+                            
                                 <div class="gambar">
                                     <center>
-                                        <img src="berita/storage/<?= $arrayBeritaEksternal[1]['fotoBerita']?>" width="100%">
+                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[1]['fotoBerita']?>" width="100%">
                                     </center>
                                 </div>
                                 <div class="isi mt-2">
@@ -270,10 +236,11 @@
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="<?= BASEURL?>berita/detail.php?idberita=<?= $arrayBeritaEksternal[2]['idBeritaEksternal']?>" style="text-decoration: none;">
+                            <a href="<?= BASEURL?>berita/index.php" style="text-decoration: none;">
+                            
                                 <div class="gambar">
                                     <center>
-                                        <img src="berita/storage/<?= $arrayBeritaEksternal[2]['fotoBerita']?>" width="100%">
+                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[2]['fotoBerita']?>" width="100%">
                                     </center>
                                 </div>
                                 <div class="isi mt-2">
@@ -294,17 +261,16 @@
                             </a>
                         </div>
                     </div>
-                </div>
-        </div>	
-
+               </div>	
+            </div>
             <a href="berita/" class="" style="text-decoration: none;color: black;">
                 <b>
-                    Berita Lainnya > 
+                    Berita Eksternal Lainnya > 
                 </b>
             </a>
 
     </div>
-    <!-- Berita -->
+    <!-- Berita Eksternal -->
 
 
     <!-- Profile -->
@@ -341,20 +307,30 @@
                     
 
                     <div class="container">
-                        <h2><b>Agenda Kegiatan</b></h2>
+                        <h2><b>Berita Internal</b></h2>
                     </div>
                     
 
                     <div class="container agenda-isi mt-5 mb-3">
                         <div class="row" style="background-color: white;padding: 30px 20px 20px 20px;width: 100%;border-radius: 5px;">
                             <h5 style="color: black;">
-                                    <b><?= $arrayAgenda[0]['agenda'];?></b>
+                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
+                                <b><?= $arrayBeritaInternal[0]['namaBeritaInternal']?></b>
+                            </div>
                             </h5>
+                            
+                            <div class="mt-3 mb-3">
+                            <img src="admin-manage-sman17bandung/pages/file/berita_internal/<?= $arrayBeritaInternal[0]['fotoBerita']?>" width="100%">
+                            </div>
+
+                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
+                                <?= $arrayBeritaInternal[0]['isiBeritaInternal']?>
+                            </div>
+
                             <p style="color: black;">
                                 <small>
-                                    <i class="fas fa-calendar"></i> <?= $arrayAgenda[0]['tanggal'];?>
+                                    <i class="fas fa-calendar"></i> <?= $arrayBeritaInternal[0]['tanggal'];?>
                                     <br>
-                                    <i class="fas fa-map-marker-alt"></i> <?= $arrayAgenda[0]['lokasi'];?>
                                 </small>		
                             </p>
                         </div>
@@ -364,13 +340,19 @@
                     <div class="container agenda-isi mt-5 mb-3">
                         <div class="row" style="background-color: white;padding: 30px 20px 20px 20px;width: 100%;border-radius: 5px;">
                             <h5 style="color: black;">
-                                    <b><?= $arrayAgenda[1]['agenda'];?></b>
+                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
+                                <b><?= $arrayBeritaInternal[1]['namaBeritaInternal']?></b>
+                            </div>
                             </h5>
+                            
+                            <div class="mt-3 mb-3">
+                            <img src="admin-manage-sman17bandung/pages/file/berita_internal/<?= $arrayBeritaInternal[1]['fotoBerita']?>" width="100%">
+                            </div>
+                        
                             <p style="color: black;">
                                 <small>
-                                    <i class="fas fa-calendar"></i> <?= $arrayAgenda[1]['tanggal'];?>
+                                    <i class="fas fa-calendar"></i> <?= $arrayBeritaInternal[1]['tanggal'];?>
                                     <br>
-                                    <i class="fas fa-map-marker-alt"></i> <?= $arrayAgenda[1]['lokasi'];?>
                                 </small>		
                             </p>
                         </div>
@@ -379,13 +361,19 @@
                     <div class="container agenda-isi mt-5 mb-3">
                         <div class="row" style="background-color: white;padding: 30px 20px 20px 20px;width: 100%;border-radius: 5px;">
                             <h5 style="color: black;">
-                                    <b><?= $arrayAgenda[2]['agenda'];?></b>
+                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
+                                <b><?= $arrayBeritaInternal[2]['namaBeritaInternal']?></b>
+                            </div>
                             </h5>
+                            
+                            <div class="mt-3 mb-3">
+                            <img src="admin-manage-sman17bandung/pages/file/berita_internal/<?= $arrayBeritaInternal[2]['fotoBerita']?>" width="100%">
+                            </div>
+                        
                             <p style="color: black;">
                                 <small>
-                                    <i class="fas fa-calendar"></i> <?= $arrayAgenda[2]['tanggal'];?>
+                                    <i class="fas fa-calendar"></i> <?= $arrayBeritaInternal[2]['tanggal'];?>
                                     <br>
-                                    <i class="fas fa-map-marker-alt"></i> <?= $arrayAgenda[2]['lokasi'];?>
                                 </small>		
                             </p>
                         </div>
@@ -402,8 +390,8 @@
 
                 <p class="pt-5">
                     <b>
-                        <a href="<?= BASEURL?>agenda" class="container" style="text-decoration: none;color: black;">
-                            Selengkapnya > 
+                        <a href="<?= BASEURL?>berita/beritaInternal.php" class="container" style="text-decoration: none;color: black;">
+                            Berita Internal Lainnya > 
                         </a>
                     </b>
                 </p>	
