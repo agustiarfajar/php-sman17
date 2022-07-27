@@ -206,6 +206,26 @@ function getDataBeritaEksternal($idBeritaEksternal){
 		return FALSE;
 }
 
+function getDataAlumni($idAlumni){
+	$db=dbConnect();
+	if($db->connect_errno==0){
+		$res=$db->query("SELECT * FROM alumni WHERE idAlumni = '$idAlumni'");
+		if($res){
+			if($res->num_rows>0){
+				$data=$res->fetch_assoc();
+				$res->free();
+				return $data;
+			}
+			else
+				return FALSE;
+		}
+		else
+			return FALSE; 
+	}
+	else
+		return FALSE;
+}
+
 
 // PENOMORAN OTOMATIS
 function kodeOtomatisGuru()

@@ -181,6 +181,14 @@ function style_section()
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="admin-alumni.php" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Alumni
+              </p>
+            </a>
+          </li>
           <li class="nav-header">Akun</li>
           <li class="nav-item">
             <a href="logout.php" class="nav-link">
