@@ -24,48 +24,136 @@ include_once("layout.php");
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    <!-- /.content-header -->
-    
-    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>
-                  1
-                </h3>
-
-                <p>Berita Internal</p>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>
+                    <?php  
+                      $jmlGuru = countGuru();
+                      echo $jmlGuru["jmlGuru"];
+                    ?>
+                    </h3>
+                    <p>Guru dan Staff</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <a href="admin-gurustaff.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
               </div>
-              <div class="icon">
-                <i class="fas fa-newspaper"></i>
+            <div class="col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>
+                  <?php  
+                    $jmlBeritaInt = countBeritaInt();
+                    echo $jmlBeritaInt["jmlBeritaInt"];
+                  ?>
+                  </h3>
+                  <p>Berita Internal</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-newspaper"></i>
+                </div>
+                <a href="admin-beritainternal.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>
-                  2
-                </h3>
-
-                <p>Berita Eksternal</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>
+                  <?php  
+                    $jmlBeritaEks = countBeritaEks();
+                    echo $jmlBeritaEks["jmlBeritaEks"];
+                  ?>
+                  </h3>
+                  <p>Berita Eksternal</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-newspaper"></i>
+                </div>
+                <a href="admin-beritaeksternal.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="fas fa-newspaper"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
+            <!-- ./col -->
+            
+            <!-- ./col -->
+            <div class="col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>
+                    <?php  
+                      $jmlPPDB = countPPDB();
+                      echo $jmlPPDB["jmlppdb"];
+                    ?>
+                  </h3>
+                  <p>PPDB</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-calendar"></i>
+                </div>
+                <a href="admin-ppdb.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
           <!-- ./col -->
-          <section class="col-lg-6 connectedSortable">
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>
+                  <?php  
+                    $jadwal = countJadwal();
+                    echo $jadwal["jmlJadwal"];
+                  ?>
+                  </h3>
+                  <p>Jadwal Pelajaran</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-newspaper"></i>
+                </div>
+                <a href="admin-jadwal.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>     
+            <!-- ./col -->
+            <div class="col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>
+                  <?php  
+                    $kalender = countKalender();
+                    echo $kalender["jmlKalender"];
+                  ?>
+                  </h3>
+                  <p>Kalender Akademik</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-calendar"></i>
+                </div>
+                <a href="admin-kalender.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            </div>          
+          </div>
+          <div class="col-md-6">
+            <section class="col-lg-12 connectedSortable">
             <!-- Calendar -->
             <div class="card bg-gradient-success">
               <div class="card-header border-0">
@@ -100,54 +188,13 @@ include_once("layout.php");
               <!-- /.card-header -->
               <div class="card-body pt-0">
                 <!--The calendar -->
-                <div id="calendar" style="width: 100%"></div>
-              </div>
-              <!-- /.card-body -->
+              <div id="calendar" style="width: 100%"></div>
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
           </section>
-          <!-- right col -->
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <div class="col-lg-3 col-3">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>
-                3
-                </h3>
-
-                <p>Guru dan Staff</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-user"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-3">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>
-                  4
-                </h3>
-
-                <p>Kalender Akademik</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-calendar"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->

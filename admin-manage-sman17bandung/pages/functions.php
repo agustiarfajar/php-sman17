@@ -30,6 +30,122 @@ function showError($message)
 <?php
 }
 
+// DASHBOARD
+function countGuru()
+{
+    $db = dbConnect();
+    if($db->connect_errno==0)
+    {
+        $sql = "SELECT COUNT(*) as jmlGuru FROM guru";
+        $res = $db->query($sql);
+        if($res)
+        {
+            $data = $res->fetch_assoc();
+            $res->free();
+            return $data;
+        }
+        else
+            return FALSE;
+    }
+    else
+        return FALSE;
+}
+function countBeritaInt()
+{
+    $db = dbConnect();
+    if($db->connect_errno==0)
+    {
+        $sql = "SELECT COUNT(*) as jmlBeritaInt FROM berita_internal";
+        $res = $db->query($sql);
+        if($res)
+        {
+            $data = $res->fetch_assoc();
+            $res->free();
+            return $data;
+        }
+        else
+            return FALSE;
+    }
+    else
+        return FALSE;
+}
+function countBeritaEks()
+{
+    $db = dbConnect();
+    if($db->connect_errno==0)
+    {
+        $sql = "SELECT COUNT(*) as jmlBeritaEks FROM berita_eksternal";
+        $res = $db->query($sql);
+        if($res)
+        {
+            $data = $res->fetch_assoc();
+            $res->free();
+            return $data;
+        }
+        else
+            return FALSE;
+    }
+    else
+        return FALSE;
+}
+function countPPDB()
+{
+    $db = dbConnect();
+    if($db->connect_errno==0)
+    {
+        $sql = "SELECT COUNT(*) as jmlppdb FROM ppdb";
+        $res = $db->query($sql);
+        if($res)
+        {
+            $data = $res->fetch_assoc();
+            $res->free();
+            return $data;
+        }
+        else
+            return FALSE;
+    }
+    else
+        return FALSE;
+}
+function countJadwal()
+{
+    $db = dbConnect();
+    if($db->connect_errno==0)
+    {
+        $sql = "SELECT COUNT(*) as jmlJadwal FROM jadwal";
+        $res = $db->query($sql);
+        if($res)
+        {
+            $data = $res->fetch_assoc();
+            $res->free();
+            return $data;
+        }
+        else
+            return FALSE;
+    }
+    else
+        return FALSE;
+}
+function countKalender()
+{
+    $db = dbConnect();
+    if($db->connect_errno==0)
+    {
+        $sql = "SELECT COUNT(*) as jmlKalender FROM kalender";
+        $res = $db->query($sql);
+        if($res)
+        {
+            $data = $res->fetch_assoc();
+            $res->free();
+            return $data;
+        }
+        else
+            return FALSE;
+    }
+    else
+        return FALSE;
+}
+
 function getDataGuru($idGuru){
 	$db=dbConnect();
 	if($db->connect_errno==0){
