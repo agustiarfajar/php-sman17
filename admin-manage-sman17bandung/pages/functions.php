@@ -70,6 +70,26 @@ function getDataBeritaInternal($idBeritaInternal){
 		return FALSE;
 }
 
+function getDataBeritaEksternal($idBeritaEksternal){
+	$db=dbConnect();
+	if($db->connect_errno==0){
+		$res=$db->query("SELECT * FROM berita_eksternal WHERE idBeritaEksternal = '$idBeritaEksternal'");
+		if($res){
+			if($res->num_rows>0){
+				$data=$res->fetch_assoc();
+				$res->free();
+				return $data;
+			}
+			else
+				return FALSE;
+		}
+		else
+			return FALSE; 
+	}
+	else
+		return FALSE;
+}
+
 
 // PENOMORAN OTOMATIS
 function kodeOtomatisGuru()
@@ -127,6 +147,36 @@ function kodeOtomatisBeritaInternal()
             }
         }
         return $idGuru;
+    }
+    else
+        return FALSE;   
+}
+
+function kodeOtomatisBeritaEksternal()
+{
+    $db = dbConnect();
+	if($db->connect_errno == 0)
+    {
+        $sql = "SELECT MAX(idBeritaEksternal) as kodeTerbesar FROM berita_eksternal";
+        $res = $db->query($sql);
+        if($res)
+        {
+            if($res->num_rows>0)
+            {
+                $data = $res->fetch_assoc();
+                $idBeritaEksternal = $data['kodeTerbesar'];
+                $urutan = (int) substr($idBeritaEksternal, 2, 4);
+                $urutan++;
+
+                $huruf = "BE";
+                $idBeritaEksternal = $huruf.sprintf("%04s", $urutan);
+               
+            } else 
+            {
+                $idBeritaEksternal = "BE0001";
+            }
+        }
+        return $idBeritaEksternal;
     }
     else
         return FALSE;   
