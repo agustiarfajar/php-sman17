@@ -1,6 +1,10 @@
 <?php include_once("functions.php");?>
 <?php
 session_start();
+if(!isset($_SESSION["idAdmin"]))
+{
+	header("Location: ../login.php?error=4");
+}
 if(isset($_POST["btnHapus"])){
 	$db=dbConnect();
 	if($db->connect_errno==0){

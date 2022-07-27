@@ -126,7 +126,7 @@ include_once("layout.php");
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Isi</th>
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Tanggal</th>
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Foto Berita</th>
-                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Modified By</th>
+                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Pengelola</th>
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Aksi</th>
                     </tr>
                     </thead>

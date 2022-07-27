@@ -85,6 +85,7 @@ include_once("layout.php");
                     <img src="file/berita_internal/<?php echo $DataBeritaInternal["fotoBerita"] ?>" width="100px">
                   </div>
                   <button type="submit" class="btn btn-info" name="btnUpdate" onclick="return confirm('Apakah anda yakin ingin mengubah data?')"><i class="fas fa-edit"></i> Update</button>
+                  <button type="reset" class="btn btn-primary">Reset</button>
                 </div>
                 <!-- /.card-body -->
               </form>

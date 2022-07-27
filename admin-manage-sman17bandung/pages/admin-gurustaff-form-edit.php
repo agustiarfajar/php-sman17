@@ -83,7 +83,8 @@ include_once("layout.php");
                       <textarea class="form-control" rows="3" name="alamatGuru" placeholder="Masukan Alamat"><?php echo $dataguru["alamatGuru"] ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-info" name="btnUpdate" onclick="return confirm('Apakah anda yakin ingin mengubah data?')"><i class="fas fa-edit"></i> Update</button>
-                </form>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                  </form>
               </div>
               <!-- /.card-body -->
             </div>
