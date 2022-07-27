@@ -49,6 +49,7 @@ if(isset($_POST["btnSimpan"])){
 			$ekstensi = strtolower(end($x));
 			$ukuran = $_FILES['file']['size'];
 			$file_tmp = $_FILES['file']['tmp_name'];
+
 			$namaFileBaru = uniqid();
 			$namaFileBaru .= '.';
 			$namaFileBaru .= $ekstensi;
