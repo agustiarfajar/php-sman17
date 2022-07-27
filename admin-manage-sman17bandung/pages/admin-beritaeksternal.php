@@ -89,7 +89,7 @@ include_once("layout.php");
                   <label for="exampleInputFile">Foto Berita</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" name="file" class="form-control" id="exampleInputFile">
+                      <input type="file" name="file" accept=".jpg,.png" class="form-control" id="exampleInputFile">
                     </div>
                   </div>
                   <div><small class="form-text">Format: jpg, png</small></div>
