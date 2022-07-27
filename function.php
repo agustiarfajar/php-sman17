@@ -1,6 +1,9 @@
 <?php
 
-    define('BASEURL', '');
+    $domain = $_SERVER['HTTP_HOST'];
+
+
+    define('BASEURL', "http://$domain/projects/sman17/");
 
     // connection
     function conn(){
@@ -24,9 +27,10 @@
         return $execute;
     }
 
-    function viewAgenda(){
+
+    function viewBeritaInternal(){
         $conn = conn();
-        $sql = "SELECT * FROM agenda";
+        $sql = "SELECT * FROM berita_internal";
         $execute = $conn->query($sql);
 
         // if (!mysqli_num_rows($execute)) {
@@ -35,6 +39,7 @@
 
         return $execute;
     }
+
 
     function viewKalender(){
         $conn = conn();
