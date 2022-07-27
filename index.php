@@ -93,8 +93,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
-                                <li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
-                                <li><a class="dropdown-item" href="#">Info Kuliah</a></li>
+                                <li><a class="dropdown-item" href="#">Daftar Nama Guru / Staff</a></li>
                             </ul>
                         </li>
 
@@ -134,7 +133,8 @@
                                 Berita
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?= BASEURL;?>berita">Berita Kegiatan</a></li>
+                                <li><a class="dropdown-item" href="<?= BASEURL;?>berita_internal">Berita Internal</a></li>
+                                <li><a class="dropdown-item" href="<?= BASEURL;?>berita_eksternal">Berita Eksternal</a></li>
                                 <li><a class="dropdown-item" href="#">Prestasi</a></li>
                             </ul>
                         </li>

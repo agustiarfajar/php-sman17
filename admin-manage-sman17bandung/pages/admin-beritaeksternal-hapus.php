@@ -1,6 +1,10 @@
 <?php include_once("functions.php");?>
 <?php
 session_start();
+if(!isset($_SESSION["idAdmin"]))
+{
+	header("Location: ../login.php?error=4");
+}
 if(isset($_POST["btnHapus"])){
 	echo $_POST["idBeritaEksternal"];
 	$db=dbConnect();
@@ -27,4 +31,6 @@ if(isset($_POST["btnHapus"])){
 	else
 		echo "Gagal koneksi".(DEVELOPMENT?" : ".$db->connect_error:"")."<br>";
 }
+else
+	header("Location: admin-beritaeksternal.php?error=proses");	
 ?>

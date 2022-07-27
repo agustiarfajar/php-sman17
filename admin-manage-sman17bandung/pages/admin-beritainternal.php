@@ -47,6 +47,8 @@ include_once("layout.php");
               showError("ID Berita sudah ada.");
             else if($Error == "input")
               showError("Kesalahan format masukan : \n".$_SESSION["salahinputberitainternal"]);
+            else if($Error == "proses")
+              showError("Terjadi kesalahan, silahkan melakukan proses dengan benar");
         }
       ?>
       <button type="button" class="btn btn-app" data-toggle="modal" data-target="#modal-lg">
@@ -126,7 +128,7 @@ include_once("layout.php");
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Isi</th>
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Tanggal</th>
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Foto Berita</th>
-                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Pengelola</th>
+                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Modified By</th>
                       <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Aksi</th>
                     </tr>
                     </thead>

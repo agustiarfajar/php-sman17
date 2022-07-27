@@ -38,6 +38,8 @@ include_once("layout.php");
               showSuccess("Data berhasil diubah.");
             else if($success == 3)
               showSuccess("Data berhasil dihapus.");
+            else if($Error == "proses")
+              showError("Terjadi kesalahan, silahkan melakukan proses dengan benar");
         }
 
         if(isset($_GET["error"]))
@@ -47,6 +49,8 @@ include_once("layout.php");
               showError("ID Berita sudah ada.");
             else if($Error == "input")
               showError("Kesalahan format masukan : \n".$_SESSION["salahinputberitaeksternal"]);
+            else if($Error == "proses")
+              showError("Terjadi kesalahan, silahkan melakukan proses dengan benar");
         }
       ?>
       <button type="button" class="btn btn-app" data-toggle="modal" data-target="#modal-lg">

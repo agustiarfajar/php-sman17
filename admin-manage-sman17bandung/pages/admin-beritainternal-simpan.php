@@ -87,4 +87,6 @@ if(isset($_POST["btnSimpan"])){
 	else
 		echo "Gagal koneksi".(DEVELOPMENT?" : ".$db->connect_error:"")."<br>";
 }
+else
+	header("Location: admin-beritainternal.php?error=proses");	
 ?>

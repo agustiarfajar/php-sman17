@@ -74,7 +74,8 @@ if(isset($_POST["btnUpdate"])){
 			header("Location: admin-beritainternal.php?error=id");
 	}
 	else
-		echo "Gagal koneksi".(DEVELOPMENT?" : ".$db->connect_error:"")."<br>";
-		
+		echo "Gagal koneksi".(DEVELOPMENT?" : ".$db->connect_error:"")."<br>";		
 }
+else
+	header("Location: admin-beritainternal.php?error=proses");	
 ?>
