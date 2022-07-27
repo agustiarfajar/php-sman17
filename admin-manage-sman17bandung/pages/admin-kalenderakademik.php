@@ -8,10 +8,10 @@ include_once("functions.php");
 include_once("layout.php");
 
 $rand_angka = random_int(3, '1000');
-
+$idKalenderRand = "KL".$rand_angka;
 if (isset($_POST['btnSimpan'])) {
   $db = dbConnect();
-  $idKalender = "KL".$rand_angka;
+  $idKalender = $_POST['idKalender'];
   $namaKalender = $_POST['judulKalender'];
   $tanggal = $_POST['tanggal'];
   $idAdmin = $_SESSION['idAdmin'];
@@ -95,7 +95,7 @@ if (isset($_POST['btnSimpan'])) {
               <div class="card-body">
                 <div class="form-group">
                   <label for="idBeritaEksternal">ID Kalender</label>
-                  <input type="text" class="form-control" id="idBeritaEksternal" maxlength="8" name="idKalender" value="KL-<?= $rand_angka;?>" readonly autocomplete="off" required>
+                  <input type="text" class="form-control" id="idBeritaEksternal" maxlength="8" name="idKalender" value="<?= $idKalenderRand;?>" readonly autocomplete="off" required>
                 </div>
                 <div class="form-group">
                   <label for="namaBeritaEksternal">Judul Kalender</label>
@@ -145,7 +145,7 @@ if (isset($_POST['btnSimpan'])) {
                     <?php
                         $db = dbConnect();
                         $no = 1;
-                        $sql = "SELECT a.*,b.namaAdmin FROM kalender as a INNER JOIN administrator as b ON a.idAdmin = b.idAdmin ORDER BY no ASC";
+                        $sql = "SELECT a.*,b.namaAdmin FROM kalender as a INNER JOIN administrator as b ON a.idAdmin = b.idAdmin";
                         $exec = mysqli_query($db, $sql);
                     ?>
                     
@@ -158,8 +158,8 @@ if (isset($_POST['btnSimpan'])) {
                             <td><?= $resKalender['tanggalKalender']?></td>
                             <td><?= $resKalender['namaAdmin']?></td>
                             <td>
-                              <a href="admin-beritaeksternal-form-edit.php?idKalender=<?= $resKalender['idKalender']?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a> |
-                              <a href="admin-beritaeksternal-form-hapus.php?idKalender=<?=$resKalender['idKalender']?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>              
+                              <a href="admin-kalender-form-edit.php?idKalender=<?= $resKalender['idKalender']?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a> |
+                              <a href="admin-kalender-hapus.php?idKalender=<?=$resKalender['idKalender']?>" onclick="return confirm('Yakin anda hapus data?')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>              
                             </td>
                         </tr>
                         <?php endforeach;?>
