@@ -172,7 +172,7 @@ $idKalenderRand = random_int(3, 1000);
                             $res = $db->query($sql);
                             if($res)
                             {
-                                $data = $res->fetch_all(MYSQLI_ASSOC)
+                                $data = $res->fetch_all(MYSQLI_ASSOC);
                                 foreach($data as $row):?>
                                 
                                     <tr>
