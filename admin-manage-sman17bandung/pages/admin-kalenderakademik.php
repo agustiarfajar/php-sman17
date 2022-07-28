@@ -103,7 +103,11 @@ if (isset($_POST['btnSimpan'])) {
                 </div>
                 <div class="form-group">
                 <label for="tanggal">Tanggal</label>
+<<<<<<< HEAD
+                <input type="date" id="tanggal" name="tanggal" class="form-control" required>
+=======
                 <input type="datetime-local" id="tanggal" name="tanggal" class="form-control" required>
+>>>>>>> b323e3965fe19106a9a306aa50a108196f70d2cd
               </div>
               </div>
               <!-- /.card-body -->

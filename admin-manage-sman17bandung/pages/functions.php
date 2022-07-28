@@ -206,6 +206,26 @@ function getDataBeritaEksternal($idBeritaEksternal){
 		return FALSE;
 }
 
+function getDataPPDB($idppdb){
+	$db=dbConnect();
+	if($db->connect_errno==0){
+		$res=$db->query("SELECT * FROM ppdb WHERE idppdb = '$idppdb'");
+		if($res){
+			if($res->num_rows>0){
+				$data=$res->fetch_assoc();
+				$res->free();
+				return $data;
+			}
+			else
+				return FALSE;
+		}
+		else
+			return FALSE; 
+	}
+	else
+		return FALSE;
+}
+
 function getDataAlumni($idAlumni){
 	$db=dbConnect();
 	if($db->connect_errno==0){
@@ -313,6 +333,35 @@ function kodeOtomatisBeritaEksternal()
             }
         }
         return $idBeritaEksternal;
+    }
+    else
+        return FALSE;   
+}
+function kodeOtomatisPPDB()
+{
+    $db = dbConnect();
+	if($db->connect_errno == 0)
+    {
+        $sql = "SELECT MAX(idppdb) as kodeTerbesar FROM ppdb";
+        $res = $db->query($sql);
+        if($res)
+        {
+            if($res->num_rows>0)
+            {
+                $data = $res->fetch_assoc();
+                $idppdb = $data['kodeTerbesar'];
+                $urutan = (int) substr($idppdb, 2, 3);
+                $urutan++;
+
+                $huruf = "P";
+                $idppdb = $huruf.sprintf("%03s", $urutan);
+               
+            } else 
+            {
+                $idppdb = "P001";
+            }
+        }
+        return $idppdb;
     }
     else
         return FALSE;   
