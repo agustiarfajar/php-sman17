@@ -1,57 +1,19 @@
 <?php
-	include '../config.php';
+	include '../function.php';
 
 	$getidBerita = $_GET['idberita'];
+	$conn = conn();
 
-	$checkBeritaById = "SELECT * FROM berita WHERE idBerita = '$getidBerita'";
+	$checkBeritaById = "SELECT * FROM berita_eksternal WHERE idBeritaEksternal = '$getidBerita'";
 	$executeBeritaById = mysqli_query($conn, $checkBeritaById);
 
-	$selectAll = mysqli_query($conn, "SELECT * FROM berita ORDER BY no DESC");
+	$selectAll = mysqli_query($conn, "SELECT * FROM berita_eksternal");
 	$array = array();
 	foreach ($selectAll as $row) {
 		$array[] = $row;
 	}
 
-	date_default_timezone_set("Asia/Jakarta");
-	
-
-	if (isset($_POST['submitKomen'])) {
-		$idKomen = md5(uniqid());
-		$idBerita = $getidBerita;
-		$namaKomentator = $_POST['usernameKomentar'];
-		$emailKomentator = $_POST['emailKomentar'];
-		$komentar = $_POST['komentar'];
-		$date = date("d-M-Y");
-		$time = date("h:i:s");
-
-		$kueri = "INSERT INTO komenBerita (idKomen, idBerita, namaKomentator, emailKomentator, isiKomen, tanggalKomen, waktuKomen) VALUES ('$idKomen','$idBerita','$namaKomentator','$emailKomentator','$komentar','$date','$time')";
-		$executeQueri = mysqli_query($conn, $kueri);
-
-		if ($executeQueri) {
-					echo "
-					<script>
-						alert('Sukses :: Komentar Telah di Tambah');
-					</script>";
-				}else{
-					echo "
-					<script>
-						alert('Gagal :: Kometar Gagal di Tambah');
-					</script>";
-				}
-
-	}
-
-
-	if ($getidBerita) {
-		if (!mysqli_num_rows($executeBeritaById)) {
-			echo "<script>document.location.href = 'index.php';</script>";
-		}
-	}else{
-		echo "<script>document.location.href = 'index.php';</script>";
-	}
-
-
-
+	date_default_timezone_set("Asia/Jakarta");	
 ?>
 
 
@@ -95,7 +57,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #2E5680;">
   <div class="container-fluid">
   	
-  	<span class="navbar-brand" href="#"><img src="../assets/logot.png" width="90%"></span>
+  	<span class="navbar-brand" href="#"><img src="../assets/logonavbar.png" width="90%"></span>
 
     	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<i class="fas fa-bars navbar-toggler-icon" style="color: white"></i>
@@ -126,7 +88,6 @@
 		        	</ul>
 	        	</li>
 
-
 	        	<li class="nav-item dropdown" style="padding-right: 10px;">
 	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 	            		Akademik
@@ -134,53 +95,6 @@
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		        		<li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
 		            	<li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
-		            	<li><a class="dropdown-item" href="#">Info Kuliah</a></li>
-		        	</ul>
-	        	</li>
-
-	        	
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Kesiswaan
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Tata Tertib</a></li>
-		            	<li><a class="dropdown-item" href="#">SOP Pakaian Seragam</a></li>
-		            	<li><a class="dropdown-item" href="#">Info Osis</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Ekskul</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Nama Siswa</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Fasilitas
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Denah Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Sarpras Sekolah</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Media
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>media">Profile Video Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>media">Galeri</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>media">Streaming Youtube</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Berita
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>berita">Berita Kegiatan</a></li>
-		            	<li><a class="dropdown-item" href="#">Prestasi</a></li>
-		            	<li><a class="dropdown-item" href="#">Karya Tulis Ilmiah</a></li>
 		        	</ul>
 	        	</li>
 
@@ -216,96 +130,23 @@
 
 		<?php foreach ($executeBeritaById as $val): ?>
 		<div class="col-sm-8 mb-4">
-			<h4><?= $val['judulBerita']?></h4>
+			<h4><?= $val['namaBeritaEksternal']?></h4>
 
-			<small style="color: #00000099;"><?= $val['tanggalupload']?> <?= $val['waktuupload']?> oleh <?= $val['uploader']?></small>
+			<small style="color: #00000099;"><?= $val['tanggal']?></small>
 			<br>
 			<br>
 			
 			<p>
 				<center>
-					<img src="fotostorage/<?= $val['namafoto']?>" width="65%">
+					<img src="../admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $val['fotoBerita']?>" width="65%">
 				</center>
 			</p>
 
 			<br>
 			<br>
-			<?= $val['isiBerita']?>
+			<?= $val['isiBeritaEksternal']?>
 		</div>
 		<?php endforeach ?>
-
-		<div class="col-sm-4 mb-4">
-			
-			<h3 style="font-family: Canela Deck Web;">Berita Terbaru</h3>
-			<hr>
-
-			<a href="detail.php?idberita=<?= $array[0]['idBerita']?>" style="text-decoration: none;">
-				<div class="card mt-2">
-					<div class="card-body">
-						<div class="elipp" style="font-family: Canela Deck Web;">
-							<b><?= $array[0]['judulBerita']?></b>
-						</div>
-					</div>
-				</div>
-			</a>
-
-			<a href="detail.php?idberita=<?= $array[1]['idBerita']?>" style="text-decoration: none;">
-				<div class="card mt-2">
-					<div class="card-body">
-						<div class="elipp" style="font-family: Canela Deck Web;">
-							<b><?= $array[1]['judulBerita']?></b>
-						</div>
-					</div>
-				</div>
-			</a>
-
-			<a href="detail.php?idberita=<?= $array[2]['idBerita']?>" style="text-decoration: none;">
-				<div class="card mt-2">
-					<div class="card-body">
-						<div class="elipp" style="font-family: Canela Deck Web;">
-							<b><?= $array[2]['judulBerita']?></b>
-						</div>
-					</div>
-				</div>
-			</a>
-
-			<a href="detail.php?idberita=<?= $array[3]['idBerita']?>" style="text-decoration: none;">
-				<div class="card mt-2">
-					<div class="card-body">
-						<div class="elipp" style="font-family: Canela Deck Web;">
-							<b><?= $array[3]['judulBerita']?></b>
-						</div>
-					</div>
-				</div>
-			</a>
-
-			<div class="mt-5">
-				
-				<p>Leave a Comment	: </p>
-
-				<form action="" method="POST">
-						
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" name="usernameKomentar" required placeholder="Nama Asli">
-						</div>
-
-						<div class="input-group mb-3">
-							<input type="email" class="form-control" name="emailKomentar" required placeholder="Email Asli">
-						</div>
-
-						<div class="input-group mb-3">
-							<textarea name="komentar" class="form-control" rows="6" required placeholder="Tulis Komentar Anda"></textarea>
-						</div>
-						<button class="btn btn-dark" type="submit" name="submitKomen">Send</button>
-				</form>
-
-			</div>
-
-
-
-
-		</div>
-
 	</div>
 </div>
 

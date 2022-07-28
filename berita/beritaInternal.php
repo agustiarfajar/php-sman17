@@ -2,7 +2,7 @@
 	include '../function.php';
 
 	$conn = conn();
-	$kueriSelectBerita = "SELECT * FROM berita_eksternal";
+	$kueriSelectBerita = "SELECT * FROM berita_internal";
 	$eksekusiBerita = mysqli_query($conn, $kueriSelectBerita);
 
 ?>
@@ -126,74 +126,35 @@
 	</h4>
 </div>
 
-<div class="container agenda-isi mt-5 mb-3">
-                        <div class="row" style="background-color: white;padding: 30px 20px 20px 20px;width: 100%;border-radius: 5px;">
-                            <h5 style="color: black;">
-                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
-                                <b><?= $arrayBeritaInternal[0]['namaBeritaInternal']?></b>
-                            </div>
-                            </h5>
-                            
-                            <div class="mt-3 mb-3">
-                            <img src="admin-manage-sman17bandung/pages/file/berita_internal/<?= $arrayBeritaInternal[0]['fotoBerita']?>" width="100%">
-                            </div>
+<div class="container mb-5" style="font-family: Canela Deck Web;">
+	<div class="row">
+		
+		<?php foreach ($eksekusiBerita as $eb): ?>
+		<div class="col-sm-4 mb-5">
+			
+			<div class="container">
+				<a href="<?= BASEURL;?>berita/detailBeritaInternal.php?idberita=<?= $eb['idBeritaInternal']?>" style="text-decoration:none;">
+				<div class="row" style="background-color: white;padding: 20px 20px 20px 20px;width: 100%;border-radius: 5px;">
+				
+					<div class="elipp">
+						<b><?= $eb['namaBeritaInternal']?></b>
+					</div>
+					<br>
 
-                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
-                                <?= $arrayBeritaInternal[0]['isiBeritaInternal']?>
-                            </div>
+					<small>
+						<div class="elip pt-3">
+							<?= $eb['isiBeritaInternal']?>
+						</div>
+					</small>
+				</div>
+				</a>
+			</div>
 
-                            <p style="color: black;">
-                                <small>
-                                    <i class="fas fa-calendar"></i> <?= $arrayBeritaInternal[0]['tanggal'];?>
-                                    <br>
-                                </small>		
-                            </p>
-                        </div>
-                    </div>
+		</div>
+		<?php endforeach ?>
 
-
-                    <div class="container agenda-isi mt-5 mb-3">
-                        <div class="row" style="background-color: white;padding: 30px 20px 20px 20px;width: 100%;border-radius: 5px;">
-                            <h5 style="color: black;">
-                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
-                                <b><?= $arrayBeritaInternal[1]['namaBeritaInternal']?></b>
-                            </div>
-                            </h5>
-                            
-                            <div class="mt-3 mb-3">
-                            <img src="admin-manage-sman17bandung/pages/file/berita_internal/<?= $arrayBeritaInternal[1]['fotoBerita']?>" width="100%">
-                            </div>
-                        
-                            <p style="color: black;">
-                                <small>
-                                    <i class="fas fa-calendar"></i> <?= $arrayBeritaInternal[1]['tanggal'];?>
-                                    <br>
-                                </small>		
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="container agenda-isi mt-5 mb-3">
-                        <div class="row" style="background-color: white;padding: 30px 20px 20px 20px;width: 100%;border-radius: 5px;">
-                            <h5 style="color: black;">
-                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
-                                <b><?= $arrayBeritaInternal[2]['namaBeritaInternal']?></b>
-                            </div>
-                            </h5>
-                            
-                            <div class="mt-3 mb-3">
-                            <img src="admin-manage-sman17bandung/pages/file/berita_internal/<?= $arrayBeritaInternal[2]['fotoBerita']?>" width="100%">
-                            </div>
-                        
-                            <p style="color: black;">
-                                <small>
-                                    <i class="fas fa-calendar"></i> <?= $arrayBeritaInternal[2]['tanggal'];?>
-                                    <br>
-                                </small>		
-                            </p>
-                        </div>
-                    </div>
-
+	</div>
+</div>
 
 
 

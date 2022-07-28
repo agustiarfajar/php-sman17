@@ -133,7 +133,7 @@
 		<div class="col-sm-4 mb-5">
 			
 			<div class="container">
-				<a href="<?= BASEURL;?>berita/detail.php?idberita=<?= $eb['idBeritaEksternal']?>" style="text-decoration:none;">
+				<a href="<?= BASEURL;?>berita/detailBeritaEksternal.php?idberita=<?= $eb['idBeritaEksternal']?>" style="text-decoration:none;">
 				<div class="row" style="background-color: white;padding: 20px 20px 20px 20px;width: 100%;border-radius: 5px;">
 				
 					<div class="elipp">

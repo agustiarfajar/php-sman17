@@ -175,7 +175,7 @@
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="<?= BASEURL?>berita/index.php" style="text-decoration: none;">
+                            <a href="<?= BASEURL?>berita/beritaEksternal.php" style="text-decoration: none;">
                             
                                 <div class="gambar">
                                     <center>
@@ -263,7 +263,7 @@
                     </div>
                </div>	
             </div>
-            <a href="berita/" class="" style="text-decoration: none;color: black;">
+            <a href="berita/beritaEksternal.php" class="" style="text-decoration: none;color: black;">
                 <b>
                     Berita Eksternal Lainnya > 
                 </b>
@@ -357,36 +357,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <div class="container agenda-isi mt-5 mb-3">
-                        <div class="row" style="background-color: white;padding: 30px 20px 20px 20px;width: 100%;border-radius: 5px;">
-                            <h5 style="color: black;">
-                            <div style="text-overflow: ellipsis;width: 18em;white-space: nowrap;overflow: hidden;color: black;">
-                                <b><?= $arrayBeritaInternal[2]['namaBeritaInternal']?></b>
-                            </div>
-                            </h5>
-                            
-                            <div class="mt-3 mb-3">
-                            <img src="admin-manage-sman17bandung/pages/file/berita_internal/<?= $arrayBeritaInternal[2]['fotoBerita']?>" width="100%">
-                            </div>
-                        
-                            <p style="color: black;">
-                                <small>
-                                    <i class="fas fa-calendar"></i> <?= $arrayBeritaInternal[2]['tanggal'];?>
-                                    <br>
-                                </small>		
-                            </p>
-                        </div>
-                    </div>
-
-
-                    
-
-
-                    
-
-
-
 
                 <p class="pt-5">
                     <b>
