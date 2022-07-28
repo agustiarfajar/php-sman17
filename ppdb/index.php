@@ -101,35 +101,34 @@
 
 <div class="container">
 
-
+    <div class="mt-5 mt-3">
+        <h1>PPDB</h1>
+    </div>
     <table class="table mt-5">
 
         <thead>
             <tr>
                 <th>No</th>
-                <th>ID Jadwal</th>
-                <th>Nama Jadwal</th>
-                <th>Kelas</th>
-                <th>Guru</th>
+                <th>Isi PPDB</th>
+                <th>Tahun</th>
+                <th>Foto</th>
             </tr>
         </thead>
         
         <?php 
             $no = 1; 
             $conn = conn(); 
-            $sql = "SELECT a.*, c.namaGuru FROM (jadwal as a
-            INNER JOIN guru as c ON a.idGuru = c.idGuru)"; 
+            $sql = "SELECT * FROM ppdb"; 
 
             $exec = mysqli_query($conn, $sql);
 
         ?>
-        <?php foreach($exec as $resJadwal):?>
+        <?php foreach($exec as $resPpdb):?>
         <tr>
             <td><?= $no++;?></td>
-            <td><?= $resJadwal['idJadwal']?></td>
-            <td><?= $resJadwal['namaJadwal']?></td>
-            <td><?= $resJadwal['kelas']?></td>
-            <td><?= $resJadwal['namaGuru']?></td>
+            <td><?= $resPpdb['isippdb']?></td>
+            <td><?= $resPpdb['tahun']?></td>
+            <td><img src="../admin-manage-sman17bandung/pages/file/ppdb/<?= $resPpdb['foto']?>" width="100px"></td>
         </tr>
         <?php endforeach;?>
 
