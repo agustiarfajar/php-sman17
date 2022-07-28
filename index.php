@@ -37,6 +37,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMAN 17 Bandung</title>
+    <link rel="icon" href="assets/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -78,12 +79,12 @@
 	            		Profil Sekolah
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Sejarah</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
+		        		<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Profil</a></li>
+		            	<!-- <li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
 		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil/hymne.php">Hymne Sekolah</a></li>
 		            	<li><a class="dropdown-item" href="#">Program Unggulan</a></li>
 		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Akreditasi Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="#">Komite Sekolah</a></li>
+		            	<li><a class="dropdown-item" href="#">Komite Sekolah</a></li> -->
 
 		        	</ul>
 	        	</li>

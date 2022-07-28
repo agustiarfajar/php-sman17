@@ -66,12 +66,12 @@
 	            		Profil Sekolah
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Sejarah</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
+						<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Profil</a></li>
+		            	<!-- <li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
 		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil/hymne.php">Hymne Sekolah</a></li>
 		            	<li><a class="dropdown-item" href="#">Program Unggulan</a></li>
 		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Akreditasi Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="#">Komite Sekolah</a></li>
+		            	<li><a class="dropdown-item" href="#">Komite Sekolah</a></li> -->
 
 		        	</ul>
 	        	</li>
@@ -88,14 +88,14 @@
 		        	</ul>
 	        	</li>
 
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
+	        	<!-- <li class="nav-item dropdown" style="padding-right: 10px;">
 	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 	            		Media
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		        		<li><a class="dropdown-item" href="<?= BASEURL;?>media">Profile Video Sekolah</a></li>
 		        	</ul>
-	        	</li>
+	        	</li> -->
 
 	        	<li class="nav-item dropdown" style="padding-right: 10px;">
 	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

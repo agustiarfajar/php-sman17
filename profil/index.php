@@ -50,12 +50,12 @@
 	            		Profil Sekolah
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Sejarah</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
+		        		<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Profil</a></li>
+		            	<!-- <li><a class="dropdown-item" href="<?= BASEURL;?>profil">Visi, Misi & Makna Logo</a></li>
 		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil/hymne.php">Hymne Sekolah</a></li>
 		            	<li><a class="dropdown-item" href="#">Program Unggulan</a></li>
 		            	<li><a class="dropdown-item" href="<?= BASEURL;?>profil">Akreditasi Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="#">Komite Sekolah</a></li>
+		            	<li><a class="dropdown-item" href="#">Komite Sekolah</a></li> -->
 
 		        	</ul>
 	        	</li>
