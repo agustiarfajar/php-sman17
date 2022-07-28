@@ -175,7 +175,7 @@
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="<?= BASEURL?>berita/beritaEksternal.php" style="text-decoration: none;">
+                            <a href="berita/detailBeritaEksternal.php?idberita=<?= $arrayBeritaEksternal[0]['idBeritaEksternal']?>" style="text-decoration: none;">
                             
                                 <div class="gambar">
                                     <center>
@@ -206,7 +206,7 @@
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="<?= BASEURL?>berita/index.php" style="text-decoration: none;">
+                            <a href="berita/detailBeritaEksternal.php?idberita=<?= $arrayBeritaEksternal[1]['idBeritaEksternal']?>" style="text-decoration: none;">
                             
                                 <div class="gambar">
                                     <center>
@@ -236,7 +236,7 @@
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="<?= BASEURL?>berita/index.php" style="text-decoration: none;">
+                            <a href="berita/detailBeritaEksternal.php?idberita=<?= $arrayBeritaEksternal[2]['idBeritaEksternal']?>" style="text-decoration: none;">
                             
                                 <div class="gambar">
                                     <center>

@@ -52,6 +52,8 @@ if(isset($_POST["btnSimpan"])){
             $waktuUpload  	=$db->escape_string($_POST["waktuUpload"]);
 			$idAdmin 			=$_SESSION["idAdmin"];
 
+
+
 			// GAMBAR
 			$ekstensi_allowed = array('png','jpg');
 			$nama = $_FILES['file']['name'];
@@ -66,7 +68,7 @@ if(isset($_POST["btnSimpan"])){
 			{
 				if($ukuran < 3044070)
 				{
-					move_uploaded_file($file_tmp, 'file/ppdb/'.$namaFileBaru);
+					move_uploaded_file($file_tmp, "file/ppdb/".$namaFileBaru);
 					// Susun query insert
 					$sql="INSERT INTO ppdb(idppdb,isippdb,tahun,foto,namafoto,waktuUpload,tanggalUpload,idAdmin)
 					VALUES('$idppdb','$isippdb','$tahun','$namaFileBaru','$namafoto','$waktuUpload','$tanggalUpload','$idAdmin')";
