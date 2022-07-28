@@ -3,9 +3,9 @@
 
 
 	$years = range(2015, strftime("%Y", time()));
-
+    $conn = conn();
 	if (isset($_POST['postData'])) {
-		$idAlumni = rand;
+		$idAlumni = random_int('3', '999');
 		$namaLengkap = mysqli_real_escape_string($conn, $_POST['namaLengkap']);
 		$tahunLulus = mysqli_real_escape_string($conn, $_POST['tahunLulus']);
 		$jurusansma = mysqli_real_escape_string($conn, $_POST['jurusansma']);
@@ -88,8 +88,8 @@
 	            		Akademik
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
+		        		<li><a class="dropdown-item" href="jadwal/">Jadwal Pelajaran</a></li>
+		            	<li><a class="dropdown-item" href="guru/">Daftar Nama Guru / Karyawan</a></li>
 		        	</ul>
 	        	</li>
 
@@ -98,15 +98,14 @@
 	            		PPDB
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Info PPDB</a></li>
-		            	<li><a class="dropdown-item" href="#">Website Resmi PPDB</a></li>
+		        		<li><a class="dropdown-item" href="ppdb/">Info PPDB</a></li>
 		        	</ul>
 	        	</li>
 
 
 
 	        	<li class="nav-item" style="padding-right: 10px;">
-	          		<a class="nav-link" style="color: white;font-size: 16px;" href="#">Alumni</a>
+	          		<a class="nav-link" style="color: white;font-size: 16px;" href="alumni.php">Alumni</a>
 	        	</li>
 
 	      	</ul>
