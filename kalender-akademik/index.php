@@ -82,33 +82,8 @@
 	            		Akademik
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
-		            	<li><a class="dropdown-item" href="#">Info Kuliah</a></li>
-		        	</ul>
-	        	</li>
-
-	        	
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Kesiswaan
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Tata Tertib</a></li>
-		            	<li><a class="dropdown-item" href="#">SOP Pakaian Seragam</a></li>
-		            	<li><a class="dropdown-item" href="#">Info Osis</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Ekskul</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Nama Siswa</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Fasilitas
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Denah Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Sarpras Sekolah</a></li>
+		        		<li><a class="dropdown-item" href="jadwal/">Jadwal Pelajaran</a></li>
+		            	<li><a class="dropdown-item" href="guru">Daftar Nama Guru</a></li>
 		        	</ul>
 	        	</li>
 
@@ -118,19 +93,6 @@
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		        		<li><a class="dropdown-item" href="<?= BASEURL;?>media">Profile Video Sekolah</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>media">Galeri</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>media">Streaming Youtube</a></li>
-		        	</ul>
-	        	</li>
-
-	        	<li class="nav-item dropdown" style="padding-right: 10px;">
-	          		<a class="nav-link dropdown-toggle" style="color: white;font-size: 16px;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            		Berita
-	          		</a>
-		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="<?= BASEURL;?>berita">Berita Kegiatan</a></li>
-		            	<li><a class="dropdown-item" href="<?= BASEURL;?>prestasi">Prestasi</a></li>
-		            	<li><a class="dropdown-item" href="#">Karya Tulis Ilmiah</a></li>
 		        	</ul>
 	        	</li>
 
@@ -140,7 +102,6 @@
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		        		<li><a class="dropdown-item" href="#">Info PPDB</a></li>
-		            	<li><a class="dropdown-item" href="#">Website Resmi PPDB</a></li>
 		        	</ul>
 	        	</li>
 
