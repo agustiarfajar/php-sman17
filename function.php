@@ -3,7 +3,7 @@
     $domain = $_SERVER['HTTP_HOST'];
 
 
-    define('BASEURL', "http://$domain/projects/sman17/");
+    define('BASEURL', "http://$domain/sman17/");
 
     // connection
     function conn(){

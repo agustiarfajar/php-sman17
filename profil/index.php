@@ -29,7 +29,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #2E5680;">
   <div class="container-fluid">
   	
-  	<span class="navbar-brand" href="#"><img src="assets/logonavbar.png" width="90%"></span>
+  	<span class="navbar-brand" href="#"><img src="../assets/logonavbar.png" width="90%"></span>
 
     	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<i class="fas fa-bars navbar-toggler-icon" style="color: white"></i>
@@ -66,8 +66,9 @@
 	            		Akademik
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
+						<li><a class="dropdown-item" href="../jadwal">Jadwal Pelajaran</a></li>
+		            	<li><a class="dropdown-item" href="../guru">Daftar Nama Guru</a></li>
+						<li><a class="dropdown-item" href="../kalender-akademik/">Kalender Akademik</a></li>
 		        	</ul>
 	        	</li>
 
@@ -84,7 +85,7 @@
 
 
 	        	<li class="nav-item" style="padding-right: 10px;">
-	          		<a class="nav-link" style="color: white;font-size: 16px;" href="#">Alumni</a>
+	          		<a class="nav-link" style="color: white;font-size: 16px;" href="../alumni/">Alumni</a>
 	        	</li>
 
 	      	</ul>
