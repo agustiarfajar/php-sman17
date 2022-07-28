@@ -62,7 +62,7 @@ if(isset($_POST["btnUpdate"])){
 		foto='$picture',
         namaFoto='$namafoto',
         tanggalUpload='$tanggalUpload',
-        waktuUpload='$waktuUpload',
+        waktuUpload='$waktuUpload'
 		WHERE idppdb='$idppdb'";
 		// Eksekusi query 
 		$res=$db->query($sql);

@@ -70,11 +70,12 @@ include_once("layout.php");
               </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Foto</label><br>
-                    <img src="file/ppdb/<?php echo $Datappdb["foto"] ?>" width="100px">    
-                  </div>
+                    <img src="file/ppdb/<?php echo $Datappdb["foto"] ?>" width="100px">   
+              </div> 
+                  <div class="form-group">
                   <label for="namafoto">Nama Foto</label>
                   <input type="text" class="form-control" id="namafoto" maxlength="50" name="namafoto" value="<?php echo $Datappdb["namaFoto"] ?>" readonly >
-                </div>
+                  </div>
                 <div class="form-group">
                 <label for="tanggalUpload">Tanggal Upload</label>
                 <input type="date" id="tanggalUpload" name="tanggalUpload" class="form-control" value="<?php echo $Datappdb["tanggalUpload"] ?>" readonly required>
@@ -83,7 +84,7 @@ include_once("layout.php");
                 <label for="waktuUpload">Waktu Upload</label>
                 <input type="time" id="waktuUpload" name="waktuUpload" class="form-control" value="<?php echo $Datappdb["waktuUpload"] ?>" readonly required>
                 </div>
-                  <button type="submit" class="btn btn-danger" name="btnHapus"> Hapus</button>
+                  <button type="submit" class="btn btn-danger" name="btnHapus" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fas fa-trash"></i> Hapus</button>
                 </div>
                 <!-- /.card-body -->
               </form>

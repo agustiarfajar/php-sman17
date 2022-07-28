@@ -62,7 +62,7 @@ include_once("layout.php");
                 </div>
                 <div class="form-group">
                 <label for="summernote">Isi</label>
-                <textarea id="summernote" name="isippdb" rows="3" value="<?php echo $Datappdb["isippdb"] ?>" required></textarea>                          
+                <textarea id="summernote" name="isippdb" rows="3" required><?php echo $Datappdb["isippdb"] ?></textarea>                          
                 </div>
                 <div class="form-group">
                 <label for="tahun">Tahun</label>
@@ -94,6 +94,7 @@ include_once("layout.php");
                 <input type="time" id="waktuUpload" name="waktuUpload" class="form-control" value="<?php echo $Datappdb["waktuUpload"] ?>" required>
                 </div>
                   <button type="submit" class="btn btn-info" name="btnUpdate" onclick="return confirm('Apakah anda yakin ingin mengubah data?')"><i class="fas fa-edit"></i> Update</button>
+                  <button type="reset" class="btn btn-primary">Reset</button>
                 </div>
                 <!-- /.card-body -->
               </form>
