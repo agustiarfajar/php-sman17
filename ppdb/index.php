@@ -65,8 +65,9 @@
 	            		Akademik
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="jadwal/">Jadwal Pelajaran</a></li>
-		            	<li><a class="dropdown-item" href="guru">Daftar Nama Guru</a></li>
+		        		<li><a class="dropdown-item" href="../jadwal">Jadwal Pelajaran</a></li>
+		            	<li><a class="dropdown-item" href="../guru">Daftar Nama Guru</a></li>
+						<li><a class="dropdown-item" href="../kalender-akademik/">Kalender Akademik</a></li>
 		        	</ul>
 	        	</li>
 
@@ -77,13 +78,14 @@
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 		        		<li><a class="dropdown-item" href="#">Info PPDB</a></li>
 		            	<li><a class="dropdown-item" href="#">Website Resmi PPDB</a></li>
+						
 		        	</ul>
 	        	</li>
 
 
 
 	        	<li class="nav-item" style="padding-right: 10px;">
-	          		<a class="nav-link" style="color: white;font-size: 16px;" href="#">Alumni</a>
+	          		<a class="nav-link" style="color: white;font-size: 16px;" href="../alumni/">Alumni</a>
 	        	</li>
 
 	      	</ul>

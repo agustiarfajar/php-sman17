@@ -94,8 +94,9 @@
 	            		Akademik
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="#">Jadwal Pelajaran</a></li>
-		            	<li><a class="dropdown-item" href="#">Daftar Nama Guru / Karyawan</a></li>
+		        		<li><a class="dropdown-item" href="jadwal/">Jadwal Pelajaran</a></li>
+		            	<li><a class="dropdown-item" href="guru/">Daftar Nama Guru / Karyawan</a></li>
+                        <li><a class="dropdown-item" href="kalender-akademik/">Kalender Akademik</a></li>
 		        	</ul>
 	        	</li>
 
@@ -112,7 +113,7 @@
 
 
 	        	<li class="nav-item" style="padding-right: 10px;">
-	          		<a class="nav-link" style="color: white;font-size: 16px;" href="#">Alumni</a>
+	          		<a class="nav-link" style="color: white;font-size: 16px;" href="alumni/">Alumni</a>
 	        	</li>
 
 	      	</ul>
@@ -167,19 +168,15 @@
         <div class="mt-5 mb-5">
             <h2><b>Berita Eksternal</b></h2>
         </div>
-
-
-        
         <div class="row">
 
                 <div class="col-sm-4 mb-5">
                     <div class="card" style="border: none;background-color: #f2f2f2;">
                         <div class="card-body">
-                            <a href="berita/detailBeritaEksternal.php?idberita=<?= $arrayBeritaEksternal[0]['idBeritaEksternal']?>" style="text-decoration: none;">
-                            
+                            <a href="berita/detailBeritaEksternal.php?idberita=<?= $arrayBeritaEksternal[0]['idBeritaEksternal']?>" style="text-decoration: none;">                 
                                 <div class="gambar">
                                     <center>
-                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[0]['fotoBerita']?>" width="100%">
+                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[0]['fotoBerita']?>" width="300px">
                                     </center>
                                 </div>
                                 <div class="isi mt-2">
@@ -210,7 +207,7 @@
                             
                                 <div class="gambar">
                                     <center>
-                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[1]['fotoBerita']?>" width="100%">
+                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[1]['fotoBerita']?>" width="300px">
                                     </center>
                                 </div>
                                 <div class="isi mt-2">
@@ -240,7 +237,7 @@
                             
                                 <div class="gambar">
                                     <center>
-                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[2]['fotoBerita']?>" width="100%">
+                                        <img src="admin-manage-sman17bandung/pages/file/berita_eksternal/<?= $arrayBeritaEksternal[2]['fotoBerita']?>" width="300px">
                                     </center>
                                 </div>
                                 <div class="isi mt-2">
@@ -453,7 +450,7 @@
 
 
     <!-- Footer -->
-    <div class="container" style="padding: 100px 0 120px 0;">
+    <div class="container" style="padding: 300px 0 120px 0;">
 
 
         <div class="row">
