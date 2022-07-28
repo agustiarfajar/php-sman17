@@ -1,5 +1,5 @@
 <?php  
-	include 'function.php';
+	include '../function.php';
 
 
 	$years = range(2015, strftime("%Y", time()));
@@ -51,7 +51,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #2E5680;">
   <div class="container-fluid">
   	
-  	<span class="navbar-brand" href="#"><img src="assets/logonavbar.png" width="90%"></span>
+  	<span class="navbar-brand" href="#"><img src="../assets/logonavbar.png" width="90%"></span>
 
     	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<i class="fas fa-bars navbar-toggler-icon" style="color: white"></i>
@@ -88,8 +88,9 @@
 	            		Akademik
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="jadwal/">Jadwal Pelajaran</a></li>
-		            	<li><a class="dropdown-item" href="guru/">Daftar Nama Guru / Karyawan</a></li>
+					<li><a class="dropdown-item" href="../jadwal">Jadwal Pelajaran</a></li>
+		            	<li><a class="dropdown-item" href="../guru/">Daftar Nama Guru</a></li>
+						<li><a class="dropdown-item" href="../kalender-akademik/">Kalender Akademik</a></li>
 		        	</ul>
 	        	</li>
 
@@ -98,7 +99,7 @@
 	            		PPDB
 	          		</a>
 		        	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		        		<li><a class="dropdown-item" href="ppdb/">Info PPDB</a></li>
+		        		<li><a class="dropdown-item" href="../ppdb/">Info PPDB</a></li>
 		        	</ul>
 	        	</li>
 

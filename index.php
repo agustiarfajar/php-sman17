@@ -501,8 +501,8 @@
                         <h4>Sistem Informasi</h4>
                         <hr width="80%">
                         <br>
-                        <a href="" style="color: white;text-decoration: none;font-size: 15px;">Website Utama SMAN 17 Bandung</a><br>
-                        <a href="" style="color: white;text-decoration: none;font-size: 15px;">PPDB</a><br>
+                        <a href="#" style="color: white;text-decoration: none;font-size: 15px;">Website Utama SMAN 17 Bandung</a><br>
+                        <a href="ppdb/" style="color: white;text-decoration: none;font-size: 15px;">PPDB</a><br>
                     </div>
 
                 </div>

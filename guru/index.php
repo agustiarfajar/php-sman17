@@ -95,7 +95,15 @@
 </nav>
 <!-- Navbar -->
 
-
+<div class="pt-5 pb-5">
+	<h4>
+		<center>
+		<b>
+			Tabel Guru dan Staff di SMAN 17 Bandung
+		</b>
+	</center>
+	</h4>
+</div>
 
 
 <!-- Jadwal -->

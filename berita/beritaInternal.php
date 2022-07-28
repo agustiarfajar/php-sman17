@@ -138,9 +138,11 @@
 				
 					<div class="elipp">
 						<b><?= $eb['namaBeritaInternal']?></b>
+						<br>
+						
 					</div>
 					<br>
-
+					<img src="../admin-manage-sman17bandung/pages/file/berita_internal/<?php echo $eb['fotoBerita'] ?>" width="300px">
 					<small>
 						<div class="elip pt-3">
 							<?= $eb['isiBeritaInternal']?>

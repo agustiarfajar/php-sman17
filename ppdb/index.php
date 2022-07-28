@@ -96,16 +96,19 @@
 </nav>
 <!-- Navbar -->
 
-
-
+<div class="pt-5 pb-5">
+	<h4>
+		<center>
+		<b>
+			Informasi PPDB SMAN 17 Bandung
+		</b>
+	</center>
+	</h4>
+</div>
 
 <!-- Jadwal -->
 
 <div class="container">
-
-    <div class="mt-5 mt-3">
-        <h1>PPDB</h1>
-    </div>
     <table class="table mt-5">
 
         <thead>
